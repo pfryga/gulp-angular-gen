@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('item')
-  .controller('NavbarCtrl', function ($scope) {
+  .controller('NavbarCtrl', function ($scope, $rootScope) {
+  	// $rootScope.menuIsShown = true;
   });
