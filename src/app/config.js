@@ -5,8 +5,12 @@ angular.module('item', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngRe
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        views: {
+					'pageView': {
+		        templateUrl: 'app/main/main.html',
+		        controller: 'MainCtrl'
+					}
+				}
       });
 
     $urlRouterProvider.otherwise('/');
