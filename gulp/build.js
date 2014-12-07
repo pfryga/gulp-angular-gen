@@ -7,7 +7,7 @@ var $ = require('gulp-load-plugins')({
 });
 
 gulp.task('styles', ['wiredep', 'injector:css:preprocessor'], function () {
-  return gulp.src(['src/app/index.less', 'src/app/vendor.less'])
+  return gulp.src(['src/assets/styles/main.less', 'src/app/vendor.less'])
     .pipe($.less({
       paths: [
         'src/bower_components',
@@ -24,10 +24,10 @@ gulp.task('styles', ['wiredep', 'injector:css:preprocessor'], function () {
 });
 
 gulp.task('injector:css:preprocessor', function () {
-  return gulp.src('src/app/index.less')
+  return gulp.src('src/assets/styles/main.less')
     .pipe($.inject(gulp.src([
         'src/{app,components}/**/*.less',
-        '!src/app/index.less',
+        '!src/assets/styles/main.less',
         '!src/app/vendor.less' 
       ], {read: false}), {
       transform: function(filePath) {
@@ -39,7 +39,7 @@ gulp.task('injector:css:preprocessor', function () {
       endtag: '// endinjector',
       addRootSlash: false
     }))
-    .pipe(gulp.dest('src/app/'));
+    .pipe(gulp.dest('src/assets/styles/'));
 });
 
 gulp.task('injector:css', ['styles'], function () {
