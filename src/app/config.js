@@ -7,8 +7,8 @@ angular.module('item', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngRe
         url: '/',
         views: {
 					'pageView': {
-		        templateUrl: 'app/main/main.html',
-		        controller: 'MainCtrl'
+		        templateUrl: 'app/mainPage/mainPage.html',
+		        controller: 'MainPageCtrl'
 					}
 				}
       })

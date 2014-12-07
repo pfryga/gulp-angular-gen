@@ -30,8 +30,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="layout" class="main-wrapper">
-        <div ui-view="pageView"></div>
+    <div ng-controller="MainCtrl" resize>
+        <div id="layout" class="main-wrapper" ng-class="{'active': menuIsShown}">
+            <div ui-view="pageView"></div>
+        </div>
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -50,8 +52,10 @@
     <!-- inject:js -->
     <script src="app/config.js"></script>
     <script src="app/main/main.controller.js"></script>
+    <script src="app/mainPage/mainPage.controller.js"></script>
     <script src="app/subpage/subpage.controller.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/navbar/resize.directive.js"></script>
     <!-- endinject -->
 
     <!-- inject:partials -->

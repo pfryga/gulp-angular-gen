@@ -2,5 +2,7 @@
 
 angular.module('item')
   .controller('NavbarCtrl', function ($scope, $rootScope) {
-  	// $rootScope.menuIsShown = true;
+	$scope.toggleMenu = function () {
+		$rootScope.menuIsShown = !($rootScope.menuIsShown);
+	};
   });
