@@ -11,6 +11,15 @@ angular.module('item', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngRe
 		        controller: 'MainCtrl'
 					}
 				}
+      })
+      .state('subpage', {
+        url: '/subpage',
+        views: {
+					'pageView': {
+		        templateUrl: 'app/subpage/subpage.html',
+		        controller: 'SubpageCtrl'
+					}
+				}
       });
 
     $urlRouterProvider.otherwise('/');
