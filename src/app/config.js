@@ -12,6 +12,15 @@ angular.module('manager', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'n
 					}
 				}
       })
+      .state('login', {
+        url: '/login',
+        views: {
+          'pageView': {
+            templateUrl: 'app/authorization/authorization.html',
+            controller: 'AuthorizationCtrl'
+          }
+        }
+      })
       .state('subpage', {
         url: '/subpage',
         views: {

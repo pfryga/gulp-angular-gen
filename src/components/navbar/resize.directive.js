@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('manager').directive('hideNavOnResize', function ($rootScope, $window) {
-    return function (scope, element) {
+    return function (scope) {
         var w = angular.element($window);
 
         w.bind('resize', function () {
@@ -10,5 +10,5 @@ angular.module('manager').directive('hideNavOnResize', function ($rootScope, $wi
                 $rootScope.menuIsShown = false;
             };
         });
-    }
+    };
 });
