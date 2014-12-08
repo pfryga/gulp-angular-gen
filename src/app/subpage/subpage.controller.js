@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('item')
+angular.module('manager')
   .controller('SubpageCtrl', function ($scope) {
     $scope.awesomeThings = [
       {

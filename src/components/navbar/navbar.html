@@ -1,4 +1,4 @@
-<div ng-controller="NavbarCtrl">
+<div ng-controller="NavbarCtrl" hide-nav-on-resize>
     <a href="#menu" id="menuLink" class="menu-link" ng-click="toggleMenu()">
         <span></span>
     </a>
@@ -7,7 +7,7 @@
             <a class="pure-menu-heading" href="#">Company</a>
     
             <ul>
-                <li><a href="#">Home {{ menuIsShown }}</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
     
                 <li class="menu-item-divided pure-menu-selected">

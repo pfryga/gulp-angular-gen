@@ -3,7 +3,7 @@
 describe('controllers', function(){
   var scope;
 
-  beforeEach(module('item'));
+  beforeEach(module('manager'));
 
   beforeEach(inject(function($rootScope) {
   	scope = $rootScope.$new();
