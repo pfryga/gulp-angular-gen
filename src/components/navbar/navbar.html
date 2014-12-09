@@ -4,17 +4,20 @@
     </a>
     <div id="menu" ng-class="{'active': menuIsShown}">
         <div class="pure-menu pure-menu-open">
-            <a class="pure-menu-heading" href="#">Company</a>
+            <a class="pure-menu-heading" ui-sref="home">Działy</a>
     
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-    
-                <li class="menu-item-divided pure-menu-selected">
-                    <a href="#">Services</a>
-                </li>
-    
-                <li><a href="#">Contact</a></li>
+                <li><a ui-sref="electronics">Elektronika</a></li>
+                <li><a href="#">Moda i uroda</a></li>
+                <li><a href="#">Dziecko</a></li>
+                <li><a href="#">Kultura i rozrywka</a></li>
+                <li><a href="#">Sport i wypoczynek</a></li>
+                <li><a href="#">Motoryzacja</a></li>
+                <li><a href="#">Kolekcje i sztuka</a></li>
+                <li><a href="#">Firma i usługi</a></li>
+            </ul>  
+            <ul>
+                <li><a ui-sref="login">Wyloguj</a></li>
             </ul>
         </div>
     </div>

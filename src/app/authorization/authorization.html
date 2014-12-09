@@ -5,12 +5,12 @@
             <h2>Logowanie do panelu administracyjnego</h2>
         </div>
 
-        <div>
-            <img src="../src/assets/images/allegro-pl.png" alt="">
+        <div class="logotype center">
+            <a href="http://www.allegro.pl/"><img ng-src="assets/images/allegro-pl.png" alt="allegro"></a>
         </div>
         
         <div class="content">
-            <form class="pure-form pure-form-aligned">
+            <form class="login-form pure-form pure-form-aligned">
                 <fieldset>
                     <div class="pure-control-group center">
                         <input id="name" type="text" placeholder="Nazwa użytkownika">
@@ -21,10 +21,12 @@
                     </div>
 
                     <div class="pure-control-group center">
-                        <button type="submit" class="pure-button pure-button-primary">Zaloguj</button>
+                        <button ui-sref="home" class="pure-button pure-button-primary">Zaloguj</button>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
 </div>
+
+<div ng-include="'components/footer/footer.html'"></div>

@@ -21,12 +21,12 @@ angular.module('manager', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'n
           }
         }
       })
-      .state('subpage', {
-        url: '/subpage',
+      .state('electronics', {
+        url: '/elektronika',
         views: {
 					'pageView': {
-		        templateUrl: 'app/subpage/subpage.html',
-		        controller: 'SubpageCtrl'
+		        templateUrl: 'app/department/department.html',
+		        controller: 'DepartmentCtrl'
 					}
 				}
       });
