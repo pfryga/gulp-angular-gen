@@ -1,4 +1,4 @@
 'use strict';
 
 angular.module('manager')
-  .controller('MainCtrl', function ($scope) {});
+  .controller('MainCtrl', function () {});
