@@ -1,5 +1,5 @@
 <div ng-controller="NavbarCtrl" hide-nav-on-resize>
-    <a href="#menu" id="menuLink" class="menu-link" ng-click="toggleMenu()">
+    <a href="" id="menuLink" class="menu-link" ng-click="toggleMenu()">
         <span></span>
     </a>
     <div id="menu" ng-class="{'active': menuIsShown}">
@@ -7,14 +7,10 @@
             <a class="pure-menu-heading" ui-sref="home">Działy</a>
     
             <ul>
-                <li><a ui-sref="electronics">Elektronika</a></li>
-                <li><a href="#">Moda i uroda</a></li>
-                <li><a href="#">Dziecko</a></li>
-                <li><a href="#">Kultura i rozrywka</a></li>
-                <li><a href="#">Sport i wypoczynek</a></li>
-                <li><a href="#">Motoryzacja</a></li>
-                <li><a href="#">Kolekcje i sztuka</a></li>
-                <li><a href="#">Firma i usługi</a></li>
+                <li ng-repeat="department in departmentsItems"
+                    ng-class="{'pure-menu-selected': department.key === currentDepartmentKey}">
+                    <a ui-sref="departments({ departmentKey: department.key })">{{ department.name }}</a>
+                </li>
             </ul>  
             <ul>
                 <li><a ui-sref="login">Wyloguj</a></li>

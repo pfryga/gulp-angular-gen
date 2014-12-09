@@ -21,12 +21,12 @@ angular.module('manager', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'n
           }
         }
       })
-      .state('electronics', {
-        url: '/elektronika',
+      .state('departments', {
+        url: '/departments/:departmentKey',
         views: {
 					'pageView': {
-		        templateUrl: 'app/department/department.html',
-		        controller: 'DepartmentCtrl'
+		        templateUrl: 'app/departments/departments.html',
+		        controller: 'DepartmentsCtrl'
 					}
 				}
       });
