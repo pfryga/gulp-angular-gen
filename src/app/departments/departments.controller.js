@@ -17,4 +17,11 @@ angular.module('manager')
 		$scope.changeTab = function (currentTab) {
 			$scope.currentTabId = currentTab;
 		};
+
+		/* temp isShown variable */
+		$scope.isShown = false;
+		$scope.showSearchResult = function () {
+			$scope.isShown = true;
+		};
+		/* end of temp variable */
     });

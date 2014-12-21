@@ -58,7 +58,7 @@
 				    </tbody>
 				</table>
 				<h2 class="content-subhead">Dodaj produkt do <span class="color">{{ tab.name }}</span></h2>
-				<form class="pure-form">
+				<form class="pure-form" ng-submit="showSearchResult()">
 				    <fieldset>
 				        <div class="form-group product-name-group">
 				        	<input type="text" id="product-name" class="product-name" placeholder="Nazwa">
@@ -72,7 +72,7 @@
 				        </div>
 				    </fieldset>
 				</form>
-				<div class="search-results">
+				<div class="search-results" ng-show="isShown">
 					<h5>Wyniki wyszukiwania dla: <span class="color">fraza, id</span> </h5>
 					<table class="pure-table pure-table-horizontal">
 					    <thead>
