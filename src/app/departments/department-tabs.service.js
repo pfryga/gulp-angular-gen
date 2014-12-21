@@ -6,13 +6,13 @@ angular.module('manager')
 			var departmentTabs = {
 				'elektronika': [{
 						key: 'first-tab',
-						name: 'First carousel'
+						name: 'Najbardziej popularne'
 					}, {
 						key: 'second-tab',
-						name: 'Second carousel'
+						name: 'Bestsellery'
 					}, {
 						key: 'third-tab',
-						name: 'Third carousel'
+						name: 'Polecane'
 					}
 				]
 			};

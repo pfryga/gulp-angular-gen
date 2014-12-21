@@ -8,23 +8,111 @@
     <div class="content">
 		<div class="pure-menu pure-menu-open pure-menu-horizontal">
 		    <ul>
-				<li ng-repeat="item in departmentTabs"
-					ng-class="{ 'pure-menu-selected': item.key === currentTabId }">
-					<a ui-sref="departmentTab({ departmentKey: departmentKey, departmentTab: item.key })">
-						{{ item.name }}
+				<li ng-repeat="tab in departmentTabs"
+					ng-class="{ 'pure-menu-selected': tab.key === currentTabId }">
+					<a ui-sref="departmentTab({ departmentKey: departmentKey, departmentTab: tab.key })">
+						{{ tab.name }}
 					</a>
 				</li>
 		    </ul>
 		</div>
 		<div id="tabs-content">
-			<div id="{{ departmentTabs[0].key }}" ng-show="departmentTabs[0].key === currentTabId">
-				lorem1
-			</div>
-			<div id="{{ departmentTabs[1].key }}" ng-show="departmentTabs[1].key === currentTabId">
-				lorem2
-			</div>
-			<div id="{{ departmentTabs[2].key }}" ng-show="departmentTabs[2].key === currentTabId">
-				lorem3
+			<div ng-repeat="tab in departmentTabs" id="tab.key" ng-show="tab.key === currentTabId">
+				<h2 class="content-subhead">Obecny stan dla <span class="color">{{ tab.name }}</span></h2>
+				<table class="pure-table pure-table-horizontal">
+				    <thead>
+				        <tr>
+				            <th></th>
+				            <th></th>
+				            <th>ID</th>
+				            <th>Nazwa</th>
+				            <th>Kończy się</th>
+				            <th></th>
+				    </thead>
+
+				    <tbody>
+				        <tr>
+				            <td>1.</td>
+				            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
+				            <td><a href="#">502132</a></td>
+				            <td><a href="#">Lorem ipsum...</a></td>
+				            <td>2014-12-06</td>
+				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
+				        </tr>
+				        <tr>
+				            <td>2.</td>
+				            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
+				            <td><a href="#">502132</a></td>
+				            <td><a href="#">Lorem ipsum...</a></td>
+				            <td>2014-12-06</td>
+				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
+				        </tr>
+				        <tr>
+				            <td>3.</td>
+				            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
+				            <td><a href="#">502132</a></td>
+				            <td><a href="#">Lorem ipsum...</a></td>
+				            <td>2014-12-06</td>
+				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
+				        </tr>
+				    </tbody>
+				</table>
+				<h2 class="content-subhead">Dodaj produkt do <span class="color">{{ tab.name }}</span></h2>
+				<form class="pure-form">
+				    <fieldset>
+				        <div class="form-group product-name-group">
+				        	<input type="text" id="product-name" class="product-name" placeholder="Nazwa">
+				        </div>
+				        <div class="form-group product-id-group">
+				        	<input type="text" id="product-id" class="product-id" placeholder="ID produktu">
+				        </div>
+
+				        <div class="form-group">
+				        	<button type="submit" class="pure-button pure-button-primary submit-form">Szukaj</button>
+				        </div>
+				    </fieldset>
+				</form>
+				<div class="search-results">
+					<h5>Wyniki wyszukiwania dla: <span class="color">fraza, id</span> </h5>
+					<table class="pure-table pure-table-horizontal">
+					    <thead>
+					        <tr>
+					            <th></th>
+					            <th></th>
+					            <th>ID</th>
+					            <th>Nazwa</th>
+					            <th>Kończy się</th>
+					            <th></th>
+					    </thead>
+
+					    <tbody>
+					        <tr>
+					            <td>1.</td>
+					            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
+					            <td><a href="#">502132</a></td>
+					            <td><a href="#">Lorem ipsum...</a></td>
+					            <td>2014-12-06</td>
+					            <td><a href="#"><span class="success"><i class="fa fa-plus"></i></span></a></td>
+					        </tr>
+					        <tr>
+					            <td>2.</td>
+					            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
+					            <td><a href="#">502132</a></td>
+					            <td><a href="#">Lorem ipsum...</a></td>
+					            <td>2014-12-06</td>
+					            <td><a href="#"><span class="success"><i class="fa fa-plus"></i></span></a></td>
+					        </tr>
+					        <tr>
+					            <td>3.</td>
+					            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
+					            <td><a href="#">502132</a></td>
+					            <td><a href="#">Lorem ipsum...</a></td>
+					            <td>2014-12-06</td>
+					            <td><a href="#"><span class="success"><i class="fa fa-plus"></i></span></a></td>
+					        </tr>
+					    </tbody>
+					</table>
+				</div>
 			</div>
 		</div>
     </div>
