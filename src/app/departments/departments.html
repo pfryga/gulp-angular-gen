@@ -3,9 +3,29 @@
 <div id="main">
     <div class="header" ng-show="departmentName">
         <h1>{{ departmentName }}</h1>
-        <h2>A subtitle for your page goes here</h2>
+        <h2>Zarządzanie karuzelami</h2>
     </div>
     <div class="content">
-
+		<div class="pure-menu pure-menu-open pure-menu-horizontal">
+		    <ul>
+				<li ng-repeat="item in departmentTabs"
+					ng-class="{ 'pure-menu-selected': item.key === currentTabId }">
+					<a ui-sref="departmentTab({ departmentKey: departmentKey, departmentTab: item.key })">
+						{{ item.name }}
+					</a>
+				</li>
+		    </ul>
+		</div>
+		<div id="tabs-content">
+			<div id="{{ departmentTabs[0].key }}" ng-show="departmentTabs[0].key === currentTabId">
+				lorem1
+			</div>
+			<div id="{{ departmentTabs[1].key }}" ng-show="departmentTabs[1].key === currentTabId">
+				lorem2
+			</div>
+			<div id="{{ departmentTabs[2].key }}" ng-show="departmentTabs[2].key === currentTabId">
+				lorem3
+			</div>
+		</div>
     </div>
 </div>

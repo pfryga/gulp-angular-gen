@@ -1,6 +1,13 @@
 {
   "name": "manager",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "scripts": {
+    "bower": "bower install",
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "test": "gulp test",
+    "protractor": "gulp protractor"
+  },
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.8.10",

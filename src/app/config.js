@@ -29,6 +29,15 @@ angular.module('manager', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'n
 		        controller: 'DepartmentsCtrl'
 					}
 				}
+      })
+      .state('departmentTab', {
+        url: '/departments/:departmentKey/:departmentTab',
+        views: {
+          'pageView': {
+            templateUrl: 'app/departments/departments.html',
+            controller: 'DepartmentsCtrl'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');

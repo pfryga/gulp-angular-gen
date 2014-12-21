@@ -1,5 +1,6 @@
 # SPA with AngularJS
 
+version: 1.0.0
 
 <img height="100" align="left" src="https://raw.githubusercontent.com/yeoman/yeoman.io/master/app/assets/img/bullet-yo.gif">
 
@@ -28,6 +29,14 @@ bower install && npm install
 * `gulp test` to launch your unit tests with Karma
 * `gulp protractor` to launch your e2e tests with Protractor
 * `gulp protractor:dist` to launch your e2e tests with Protractor on the dist files
+
+or
+
+* 'npm run bower'
+* 'npm run build'
+* 'npm run serve'
+* 'npm run test'
+* 'npm run protractor'
 
 ## License
 
