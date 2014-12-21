@@ -32,11 +32,11 @@ bower install && npm install
 
 or
 
-* 'npm run bower'
-* 'npm run build'
-* 'npm run serve'
-* 'npm run test'
-* 'npm run protractor'
+* `npm run bower`
+* `npm run build`
+* `npm run serve`
+* `npm run test`
+* `npm run protractor`
 
 ## License
 
