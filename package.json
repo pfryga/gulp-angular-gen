@@ -8,6 +8,12 @@
     "test": "gulp test",
     "protractor": "gulp protractor"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pfryga/gulp-angular-gen.git"
+  },
+  "author": "piotr.fryga@allegro.pl",
+  "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.8.10",

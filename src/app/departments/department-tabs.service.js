@@ -5,6 +5,17 @@ angular.module('manager')
 		this.fetchDepartmentsTabs = function () {
 			var departmentTabs = {
 				'elektronika': [{
+						key: 'popular',
+						name: 'Najbardziej popularne'
+					}, {
+						key: 'second-tab',
+						name: 'Bestsellery'
+					}, {
+						key: 'third-tab',
+						name: 'Polecane'
+					}
+				],
+				'dziecko': [{
 						key: 'first-tab',
 						name: 'Najbardziej popularne'
 					}, {
