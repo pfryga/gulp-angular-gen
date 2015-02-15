@@ -1,44 +1,17 @@
 'use strict';
 
 angular.module('manager')
-	.service('DepartmentsDataService', function() {
+	.service('DepartmentsDataService', function($http) {
+		this.promise;
 		this.fetchDepartments = function () {
-			var departments = [
-				{
-					key: 'elektronika',
-					name: 'Elektronika'
-				},
-				{
-					key: 'moda-i-uroda',
-					name: 'Moda i uroda'
-				},
-				{
-					key: 'dziecko',
-					name: 'Dziecko'
-				},
-				{
-					key: 'kultura-i-rozrywka',
-					name: 'Kultura i rozrywka'
-				},
-				{
-					key: 'sport-i-wypoczynek',
-					name: 'Sport i wypoczynek'
-				},
-				{
-					key: 'motoryzacja',
-					name: 'Motoryzacja'
-				},
-				{
-					key:'kolekcje-i-sztuka',
-					name: 'Kolekcje i sztuka'
-				},
-				{
-					key: 'firma-i-uslugi',
-					name: 'Firma i usługi'
-				}
-			];
 
-			return departments;
+			if ( !this.promise ) {
+				this.promise = $http.get('http://localhost:8080/departments').then(function (response) {
+					return response.data.items;
+				});
+			}
+
+			return this.promise;
 		};
 
 		this.getCurrentName = function (departmentKey) {

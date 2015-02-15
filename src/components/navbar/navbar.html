@@ -5,13 +5,13 @@
     <div id="menu" ng-class="{'active': menuIsShown}">
         <div class="pure-menu pure-menu-open">
             <a class="pure-menu-heading" ui-sref="home">Działy</a>
-    
+
             <ul>
                 <li ng-repeat="department in departmentsItems"
                     ng-class="{'pure-menu-selected': department.key === currentDepartmentKey}">
                     <a ui-sref="departments({ departmentKey: department.key })">{{ department.name }}</a>
                 </li>
-            </ul>  
+            </ul>
             <ul>
                 <li><a ui-sref="login">Wyloguj</a></li>
             </ul>

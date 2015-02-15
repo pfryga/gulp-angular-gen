@@ -5,6 +5,10 @@ angular.module('manager')
 	$scope.toggleMenu = function () {
 		$rootScope.menuIsShown = !($rootScope.menuIsShown);
 	};
-	$scope.departmentsItems = DepartmentsDataService.fetchDepartments();
-	$scope.currentDepartmentKey = $stateParams.departmentKey;
+
+    DepartmentsDataService.fetchDepartments().then(function(data) {
+        $scope.departmentsItems = data;
+    });
+
+    $scope.currentDepartmentKey = $stateParams.departmentKey;
   });
