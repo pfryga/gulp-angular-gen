@@ -8,17 +8,17 @@
     <div class="content">
 		<div class="pure-menu pure-menu-open pure-menu-horizontal">
 		    <ul>
-				<li ng-repeat="tab in departmentTabs"
-					ng-class="{ 'pure-menu-selected': tab.key === currentTabId }">
-					<a ui-sref="departmentTab({ departmentKey: departmentKey, departmentTab: tab.key })">
-						{{ tab.name }}
+				<li ng-repeat="carousel in departmentCarousels"
+					ng-class="{ 'pure-menu-selected': carousel.key === currentTabId }">
+					<a ui-sref="departmentTab({ departmentKey: departmentKey, departmentTab: carousel.key })">
+						{{ carousel.name }}
 					</a>
 				</li>
 		    </ul>
 		</div>
 		<div id="tabs-content">
-			<div ng-repeat="tab in departmentTabs" id="tab.key" ng-show="tab.key === currentTabId">
-				<h2 class="content-subhead">Obecny stan dla <span class="color">{{ tab.name }}</span></h2>
+			<div ng-repeat="carousel in departmentCarousels" id="carousel.key" ng-show="carousel.key === currentTabId">
+				<h2 class="content-subhead">Obecny stan dla <span class="color">{{ carousel.name }}</span></h2>
 				<table class="pure-table pure-table-horizontal">
 				    <thead>
 				        <tr>
@@ -57,7 +57,7 @@
 				        </tr>
 				    </tbody>
 				</table>
-				<h2 class="content-subhead">Dodaj produkt do <span class="color">{{ tab.name }}</span></h2>
+				<h2 class="content-subhead">Dodaj produkt do <span class="color">{{ carousel.name }}</span></h2>
 				<form class="pure-form" ng-submit="showSearchResult()">
 				    <fieldset>
 				        <div class="form-group product-name-group">
