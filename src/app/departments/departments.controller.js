@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('manager')
-    .controller('DepartmentsCtrl', function ($scope, $stateParams, DepartmentsDataService, DepartmentTabsService) {
-		$scope.departmentName = DepartmentsDataService.getCurrentName($stateParams.departmentKey);
+    .controller('DepartmentsCtrl', function ($scope, $stateParams, DepartmentsDataService, DepartmentTabsService, DepartmentCarouselsService) {
 		$scope.departmentTabs = DepartmentTabsService.getCorrectTabs($stateParams.departmentKey);
 		$scope.departmentKey = $stateParams.departmentKey;
+		$scope.departmentCarousels = DepartmentCarouselsService.test();
+
+		DepartmentsDataService.getCurrentName($stateParams.departmentKey).then(function (data) {
+			$scope.departmentName = data;
+		});
 
 		if ($stateParams.departmentTab) {
 			$scope.currentTabId = $stateParams.departmentTab;

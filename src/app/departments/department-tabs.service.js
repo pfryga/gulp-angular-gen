@@ -4,7 +4,7 @@ angular.module('manager')
 	.service('DepartmentTabsService', function() {
 		this.fetchDepartmentsTabs = function () {
 			var departmentTabs = {
-				'elektronika': [{
+				'electronics': [{
 						key: 'popular',
 						name: 'Najbardziej popularne'
 					}, {

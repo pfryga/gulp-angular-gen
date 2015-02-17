@@ -2,27 +2,28 @@
 
 angular.module('manager')
 	.service('DepartmentsDataService', function($http) {
-		this.promise;
+		this.depPromise;
+		this.currentDepPromise;
 		this.fetchDepartments = function () {
 
-			if ( !this.promise ) {
-				this.promise = $http.get('http://localhost:8080/departments').then(function (response) {
+			if ( !this.depPromise ) {
+				this.depPromise = $http.get('http://localhost:8080/departments').then(function (response) {
 					return response.data.items;
 				});
 			}
 
-			return this.promise;
+			return this.depPromise;
 		};
 
 		this.getCurrentName = function (departmentKey) {
-			var departments = this.fetchDepartments();
-
-			for (var i = 0; i < departments.length; i++) {
-				if (departments[i].key === departmentKey) {
-					return departments[i].name;
+			this.currentDepPromise = this.fetchDepartments().then(function(data) {
+				for (var i = 0; i < data.length; i++) {
+					if (data[i].key === departmentKey) {
+						return data[i].name;
+					}
 				}
-			}
+			});
 
-			return 0;
+			return this.currentDepPromise;
 		};
 	});
