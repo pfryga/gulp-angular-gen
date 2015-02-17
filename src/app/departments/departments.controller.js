@@ -3,19 +3,23 @@
 angular.module('manager')
     .controller('DepartmentsCtrl', function ($scope, $stateParams, DepartmentsDataService, DepartmentCarouselsService) {
 		$scope.departmentKey = $stateParams.departmentKey;
-		$scope.departmentCarousels = DepartmentCarouselsService.getCarousels($stateParams.departmentKey);
 
 		DepartmentsDataService.getCurrentName($stateParams.departmentKey).then(function (data) {
 			$scope.departmentName = data;
 		});
 
-		if ($stateParams.departmentTab) {
-			$scope.currentTabId = $stateParams.departmentTab;
-		} else {
-			if ($scope.departmentCarousels.length) {
-				$scope.currentTabId = $scope.departmentCarousels[0].key;
+		DepartmentCarouselsService.getCarousels($stateParams.departmentKey).then(function (response) {
+			$scope.departmentCarousels = response.data.items;
+
+			if ($stateParams.departmentTab) {
+				$scope.currentTabId = $stateParams.departmentTab;
+			} else {
+				if ($scope.departmentCarousels.length) {
+					$scope.currentTabId = $scope.departmentCarousels[0].key;
+				}
 			}
-		}
+		});
+
 
 		$scope.changeTab = function (currentTab) {
 			$scope.currentTabId = currentTab;

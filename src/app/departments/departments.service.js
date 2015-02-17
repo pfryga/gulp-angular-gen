@@ -5,9 +5,10 @@ angular.module('manager')
 		this.depPromise;
 		this.currentDepPromise;
 		this.fetchDepartments = function () {
+			var url = 'http://localhost:8080/departments';
 
 			if ( !this.depPromise ) {
-				this.depPromise = $http.get('http://localhost:8080/departments').then(function (response) {
+				this.depPromise = $http.get(url, { cache: true}).then(function (response) {
 					return response.data.items;
 				});
 			}
