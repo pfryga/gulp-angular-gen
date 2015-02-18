@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('manager')
-    .controller('DepartmentsCtrl', function ($scope, $stateParams, DepartmentsDataService, DepartmentCarouselsService) {
+    .controller('DepartmentsCtrl', function ($scope, $stateParams, DepartmentsDataService) {
 		$scope.departmentKey = $stateParams.departmentKey;
 
 		DepartmentsDataService.getCurrentName($stateParams.departmentKey).then(function (data) {
 			$scope.departmentName = data;
 		});
 
-		DepartmentCarouselsService.getCarousels($stateParams.departmentKey).then(function (response) {
+		DepartmentsDataService.getCarousels($stateParams.departmentKey).then(function (response) {
 			$scope.departmentCarousels = response.data.items;
 
 			if ($stateParams.departmentTab) {
@@ -25,10 +25,16 @@ angular.module('manager')
 			$scope.currentTabId = currentTab;
 		};
 
-		/* temp isShown variable */
-		$scope.isShown = false;
-		$scope.showSearchResult = function () {
-			$scope.isShown = true;
+		$scope.getSearchResult = function (id) {
+			DepartmentsDataService.getItemDetails(id).then(function (data) {
+				$scope.itemDetails = data;
+			});
 		};
-		/* end of temp variable */
+
+
+		$scope.addItemToCarousel = function (id, carousel, department) {
+			 DepartmentsDataService.addItemToCarousel(id, carousel, department).then(function (response) {
+			 	$scope.addItemResult = response;
+			 });
+		};
     });

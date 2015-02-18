@@ -58,13 +58,10 @@
 				    </tbody>
 				</table>
 				<h2 class="content-subhead">Dodaj produkt do <span class="color">{{ carousel.name }}</span></h2>
-				<form class="pure-form" ng-submit="showSearchResult()">
+				<form class="pure-form" ng-submit="getSearchResult(productId)">
 				    <fieldset>
-				        <div class="form-group product-name-group">
-				        	<input type="text" id="product-name" class="product-name" placeholder="Nazwa">
-				        </div>
 				        <div class="form-group product-id-group">
-				        	<input type="text" id="product-id" class="product-id" placeholder="ID produktu">
+				        	<input type="text" ng-model="productId" id="product-id" class="product-id" placeholder="ID produktu">
 				        </div>
 
 				        <div class="form-group">
@@ -72,12 +69,12 @@
 				        </div>
 				    </fieldset>
 				</form>
-				<div class="search-results" ng-show="isShown">
-					<h5>Wyniki wyszukiwania dla: <span class="color">fraza, id</span> </h5>
+				<div class="search-results" ng-show="itemDetails">
+					<h5>Wyniki wyszukiwania dla: <span class="color">{{ productId }}</span> </h5>
+					<label ng-show="addItemResult.statusText == 'OK'" for="">Dodane pomyślnie!</label>
 					<table class="pure-table pure-table-horizontal">
 					    <thead>
 					        <tr>
-					            <th></th>
 					            <th></th>
 					            <th>ID</th>
 					            <th>Nazwa</th>
@@ -87,28 +84,11 @@
 
 					    <tbody>
 					        <tr>
-					            <td>1.</td>
-					            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
-					            <td><a href="#">502132</a></td>
-					            <td><a href="#">Lorem ipsum...</a></td>
-					            <td>2014-12-06</td>
-					            <td><a href="#"><span class="success"><i class="fa fa-plus"></i></span></a></td>
-					        </tr>
-					        <tr>
-					            <td>2.</td>
-					            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
-					            <td><a href="#">502132</a></td>
-					            <td><a href="#">Lorem ipsum...</a></td>
-					            <td>2014-12-06</td>
-					            <td><a href="#"><span class="success"><i class="fa fa-plus"></i></span></a></td>
-					        </tr>
-					        <tr>
-					            <td>3.</td>
-					            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
-					            <td><a href="#">502132</a></td>
-					            <td><a href="#">Lorem ipsum...</a></td>
-					            <td>2014-12-06</td>
-					            <td><a href="#"><span class="success"><i class="fa fa-plus"></i></span></a></td>
+					            <td><a href="#"><img src="{{ itemDetails.mainImage.small }}"/></a></td>
+					            <td><a href="#">{{ itemDetails.id }}</a></td>
+					            <td><a href="#">{{ itemDetails.name }}</a></td>
+					            <td>{{ itemDetails.endingTime * 1000 | date:'dd-MM-yyyy HH:mm:ss' }}</td>
+					            <td><a ng-click="addItemToCarousel(itemDetails.id, carousel.key, departmentKey)"><span class="success"><i class="fa fa-plus"></i></span></a></td>
 					        </tr>
 					    </tbody>
 					</table>
