@@ -66,8 +66,8 @@ angular.module('manager')
 					return str.join("&");
 				},
 				data: {
-					carousel: carousel,
-					department: department
+					department: department,
+					carousel: carousel
 				}
 			}
 
@@ -82,5 +82,27 @@ angular.module('manager')
 			});
 
 			return this.offersPromise;
+		};
+
+		this.removeOfferFromCarousel = function (offerId, department, carousel) {
+			var req = {
+				method: 'DELETE',
+				url: 'http://localhost:8080/offer/' + offerId,
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				transformRequest: function(obj) {
+					var str = [];
+					for(var p in obj)
+					str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+					return str.join("&");
+				},
+				data: {
+					department: department,
+					carousel: carousel
+				}
+			}
+
+			return $http(req);
 		};
 	});

@@ -42,4 +42,10 @@ angular.module('manager')
 				}
 			}
 		};
+
+		$scope.removeOfferFromCarousel = function (offerId, department, carousel) {
+			DepartmentsDataService.removeOfferFromCarousel(offerId, department, carousel).then(function (response) {
+				$scope.removeOfferResult = response;
+			});
+		};
     });

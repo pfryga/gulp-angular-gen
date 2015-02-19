@@ -16,6 +16,9 @@
 				</li>
 		    </ul>
 		</div>
+		<div ng-show="removeOfferResult.statusText == 'OK'">
+			Usunięto!
+		</div>
 		<div id="tabs-content">
 			<div ng-repeat="carousel in departmentCarousels" id="carousel.key" ng-show="carousel.key === currentTabId">
 				<h2 class="content-subhead">Obecny stan dla <span class="color">{{ carousel.name }}</span></h2>
@@ -35,7 +38,7 @@
 				            <td><a href="#"><img src="{{ offer.mainImage }}"/></a></td>
 				            <td><a href="#">{{ offer.id }}</a></td>
 				            <td><a href="#">{{ offer.name }}</a></td>
-				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
+				            <td><a ng-click="removeOfferFromCarousel(offer.id, departmentKey, carousel.key)"><i class="fa fa-trash"></i></a></td>
 				        </tr>
 				    </tbody>
 				</table>
