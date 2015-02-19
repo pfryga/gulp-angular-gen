@@ -26,33 +26,15 @@
 				            <th></th>
 				            <th>ID</th>
 				            <th>Nazwa</th>
-				            <th>Kończy się</th>
 				            <th></th>
 				    </thead>
 
 				    <tbody>
-				        <tr>
-				            <td>1.</td>
-				            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
-				            <td><a href="#">502132</a></td>
-				            <td><a href="#">Lorem ipsum...</a></td>
-				            <td>2014-12-06</td>
-				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
-				        </tr>
-				        <tr>
-				            <td>2.</td>
-				            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
-				            <td><a href="#">502132</a></td>
-				            <td><a href="#">Lorem ipsum...</a></td>
-				            <td>2014-12-06</td>
-				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
-				        </tr>
-				        <tr>
-				            <td>3.</td>
-				            <td><a href="#"><img src="http://www.placehold.it/100x75"/></a></td>
-				            <td><a href="#">502132</a></td>
-				            <td><a href="#">Lorem ipsum...</a></td>
-				            <td>2014-12-06</td>
+				        <tr ng-repeat="offer in carouselOffers">
+				            <td>{{ $index + 1 }}.</td>
+				            <td><a href="#"><img src="{{ offer.mainImage }}"/></a></td>
+				            <td><a href="#">{{ offer.id }}</a></td>
+				            <td><a href="#">{{ offer.name }}</a></td>
 				            <td><a href="#"><i class="fa fa-trash"></i></a></td>
 				        </tr>
 				    </tbody>

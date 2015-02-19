@@ -6,6 +6,7 @@ angular.module('manager')
 		this.departmentsPromise;
 		this.currentDepartmentsPromise;
 		this.itemPromise;
+		this.offersPromise;
 
 		this.fetchDepartments = function () {
 			var url = 'http://localhost:8080/departments';
@@ -71,5 +72,15 @@ angular.module('manager')
 			}
 
 			return $http(req);
+		};
+
+		this.fetchOffersList = function (department, carousel) {
+			var url = 'http://localhost:8080/offers/' + department + '/' + carousel;
+
+			this.offersPromise = $http.get(url, { cache: true}).then(function (response) {
+				return response.data;
+			});
+
+			return this.offersPromise;
 		};
 	});
